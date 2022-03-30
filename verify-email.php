@@ -22,7 +22,8 @@ if (mysqli_num_rows($query) > 0) {
 $row= mysqli_fetch_array($query);
 if($row['email_verified_at'] == NULL){
 mysqli_query($conn,"UPDATE users set email_verified_at ='" . $d . "' WHERE email='" . $email . "'");
-$msg = "Congratulations! Your email has been verified.";
+echo "<script type='text/javascript'>document.location.replace('welcom.php');</script>";
+ //$msg = "Congratulations! Your email has been verified.";
 }else{
 $msg = "You have already verified your account with us";
 }
